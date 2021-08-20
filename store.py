@@ -67,6 +67,7 @@ def delete_product():
         if PRODUCTS[i]['id'] == id:
             del PRODUCTS[i]
             f=1
+            break
     if f == 0:
         print('Input wrong id!')
 
@@ -112,7 +113,10 @@ def exit_program():
         name = PRODUCTS[i]['name']
         price = PRODUCTS[i]['price']
         count = PRODUCTS[i]['count']
-        new_product = id + ',' + name + ',' + price + ',' + count + '\n'
+        if i == len(PRODUCTS)-1:
+            new_product = id + ',' + name + ',' + price + ',' + count 
+        else:
+            new_product = id + ',' + name + ',' + price + ',' + count + '\n'
         new_products += new_product
     file = open('E:\\vs code\\EX-6\\Database.txt' , 'w')
     file.write(new_products)
