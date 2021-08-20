@@ -118,7 +118,7 @@ def exit_program():
         else:
             new_product = id + ',' + name + ',' + price + ',' + count + '\n'
         new_products += new_product
-    file = open('E:\\vs code\\EX-6\\Database.txt' , 'w')
+    file = open('Database.txt' , 'w')
     file.write(new_products)
     exit()
 
@@ -138,7 +138,7 @@ def show_menu():
 
 def load():
     print('Loading.....')
-    file = open('E:\\vs code\\EX-6\\Database.txt' , 'r')
+    file = open('Database.txt' , 'r')
     data = file.read()
     product_list = data.split('\n')
     for i in range(len(product_list)):
